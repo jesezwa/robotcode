@@ -46,11 +46,19 @@ function waitingTime() {
 function toLate() {
     music.baDing.loop()
 
-    if (input.buttonA.isPressed()) {
-        light.clear()
-        timeCounter = 0;
-        music.stopAllSounds()
-        timer()
-    }
+function toLate() {
+    music.baDing.loop()
+
+   input.buttonA.onEvent(ButtonEvent.Click, function () {
+       
+           console.log('if')
+           light.clear()
+           timeCounter = 0;
+           music.stopAllSounds()
+           timer()
+      
+   })
+
+}
 
 }
