@@ -2,22 +2,23 @@
 const startTime = 500;
 let lightTimer = 500;
 let timeCounter = 0;
-const maxTime = 10000;
-const addTime = 500;
+const maxTime = 10000; // Maximale waarde voor lightTimer
+const addTime = 500; // De hoeveelheid tijd toegevoegd bij het klikken op knop B
 
 // Functie om de lichten te activeren
 function timer() {
-        input.buttonB.onEvent(ButtonEvent.Click, function () {
+    // Event handlers voor knop B om de timerduur aan te passen
+    input.buttonB.onEvent(ButtonEvent.Click, function () {
         lightTimer += addTime;
-        console.log(lightTimer)
+        console.log(lightTimer);
         if (lightTimer >= maxTime) {
-            lightTimer = maxTime
+            lightTimer = maxTime; // Beperk lightTimer tot maxTime
         }
-    })
+    });
 
     input.buttonB.onEvent(ButtonEvent.LongClick, function () {
-        lightTimer = startTime;
-    })
+        lightTimer = startTime; // Reset lightTimer naar de oorspronkelijke waarde
+    });
 
     // Loopt door de lichten van 0 tot 10
     for (let i = 0; i <= 10; i++) {
