@@ -43,8 +43,6 @@ function waitingTime() {
     } toLate()
 }
 
-function toLate() {
-    music.baDing.loop()
 
 function toLate() {
     music.baDing.loop()
@@ -61,4 +59,4 @@ function toLate() {
 
 }
 
-}
+
