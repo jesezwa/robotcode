@@ -1,10 +1,24 @@
 // Variabele voor het instellen van de timerduur voor het activeren van de lichten (in milliseconden), hiermee bepalen we ook de totale tijd van de timer
+const startTime = 500;
 let lightTimer = 500;
-// Variabele voor het tellen en onthouden hoever we zijn
 let timeCounter = 0;
+const maxTime = 10000;
+const addTime = 500;
 
 // Functie om de lichten te activeren
 function timer() {
+        input.buttonB.onEvent(ButtonEvent.Click, function () {
+        lightTimer += addTime;
+        console.log(lightTimer)
+        if (lightTimer >= maxTime) {
+            lightTimer = maxTime
+        }
+    })
+
+    input.buttonB.onEvent(ButtonEvent.LongClick, function () {
+        lightTimer = startTime;
+    })
+
     // Loopt door de lichten van 0 tot 10
     for (let i = 0; i <= 10; i++) {
         // Pauzeer voor 'lightTimer' milliseconden voordat het volgende licht wordt geactiveerd
