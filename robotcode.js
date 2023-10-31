@@ -88,14 +88,14 @@ function waitingTime() {
 }
 // Functie om te laten zien dat er te laat is gereageerd
 function toLate() {
-
+    music.setVolume(255)
     // Speel een geluid af (continu) wanneer er te laat is gereageerd
     music.baDing.loop();
 
 
     // Voer de functie uit wanneer knop A wordt ingedrukt
     input.touchA2.onEvent(ButtonEvent.Click, function () {
-
+        music.setVolume(0)
 
         // Maak alle lichten leeg
         light.clear();
@@ -111,7 +111,7 @@ function toLate() {
     });
 
     input.touchA3.onEvent(ButtonEvent.Click, function () {
-
+        music.setVolume(0)
         // Maak alle lichten leeg
         light.clear();
 
@@ -127,7 +127,3 @@ function toLate() {
 }
 // Roep de timerfunctie aan om het programma te starten
 timer();
-
-// Roep de timerfunctie aan om het programma te starten
-timer();
-
